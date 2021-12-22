@@ -5,6 +5,7 @@ import Center from '../components/Center';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import useAuthHookContext from '../contexts/auth-context';
 import AppDrawerParamList from '../types/appdrawer-param-list';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
 type Props = StackScreenProps<AppDrawerParamList, 'MapScreen'>;
 type navigation = Props['navigation'];
@@ -18,16 +19,18 @@ export default function MapScreen() {
     });
   }, []);
   return (
-    <Center>
-      <Text>Map Screen</Text>
+    <SafeAreaView>
+      <Center>
+        <Text>Map Screen</Text>
 
-      <Button
-        title="SignOUT"
-        onPress={() => {
-          SignOut();
-        }}
-      />
-    </Center>
+        <Button
+          title="SignOUT"
+          onPress={() => {
+            SignOut();
+          }}
+        />
+      </Center>
+    </SafeAreaView>
   );
 }
 
