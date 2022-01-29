@@ -14,9 +14,10 @@ export default function AuthStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="UserProfileScreen" component={UserProfileScreen} />
+
       <Stack.Screen name="ResolveAuthScreen" component={ResolveAuthScreen} />
       <Stack.Screen name="SignInScreen" component={SignInScreen} />
-      <Stack.Screen name="UserProfileScreen" component={UserProfileScreen} />
     </Stack.Navigator>
   );
 }

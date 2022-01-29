@@ -22,22 +22,11 @@ type Props = StackScreenProps<AuthStackParamList, 'SignInScreen'>;
 type navigation = Props['navigation'];
 type route = Props['route'];
 export default function SignInScreen(props: Props) {
-  const AB = useCounterHookContext();
-  const {
-    state: authState,
-    SignIn,
-    SignOut,
-    tryLocalSignIn,
-  } = useAuthHookContext();
   const [username, setUsername] = React.useState('');
   const [password, setpassword] = React.useState('');
   const [isKeyboardOpen, setIsKeyboardOpen] = React.useState<Boolean>(false);
-  const navigtionContainerRef = useNavigationContainerRef();
 
   React.useEffect(() => {
-    AsyncStorage.getItem('token').then(res => {
-      console.log('token from signin' + res);
-    });
     const keyboardDidShowEvent = Keyboard.addListener('keyboardDidShow', () => {
       setIsKeyboardOpen(true);
     });
@@ -65,17 +54,7 @@ export default function SignInScreen(props: Props) {
         onForgetPasswordPress={() => {
           console.log('forget pass');
         }}
-        onSignIn={() => {
-          if (SimpleStrCheck(username) && SimpleStrCheck(password)) {
-            SignIn({username, password});
-          } else {
-            ToastAndroid.showWithGravity(
-              'Username and password must contain atleast 5 characters',
-              ToastAndroid.LONG,
-              ToastAndroid.CENTER,
-            );
-          }
-        }}
+        onSignIn={() => {}}
       />
       <Circle
         style={{

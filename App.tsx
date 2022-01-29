@@ -1,3 +1,4 @@
+import MapboxGL from '@react-native-mapbox-gl/maps';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';

@@ -8,7 +8,7 @@ type RootStackParamList = {
   AppDrawer: NavigatorScreenParams<AppDrawerParamList>;
   Notifications: undefined;
   Messanger: undefined;
-  Rating: {name: string};
+  Rating: undefined;
 };
 
 export default RootStackParamList;

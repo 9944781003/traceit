@@ -2,7 +2,7 @@ import {createStackNavigator, StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import MessengerScreen from '../srceens/MessengerScreen';
-import NotificationListScreen from '../srceens/NotificationListScreen';
+import NotificationListScreen from '../srceens/AlertsScreen';
 import RatingScreen from '../srceens/RatingScreen';
 import ResolveAuthScreen from '../srceens/ResolveAuthScreen';
 import RootStackParamList from '../types/rootstack-param-list';
@@ -17,8 +17,8 @@ export default function RootStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="ResolveAuthScreen" component={ResolveAuthScreen} />
-      <Stack.Screen name="AuthStack" component={AuthStackNavigator} />
+      {/* <Stack.Screen name="ResolveAuthScreen" component={ResolveAuthScreen} /> */}
+      {/* <Stack.Screen name="AuthStack" component={AuthStackNavigator} /> */}
       <Stack.Screen name="AppDrawer" component={AppDrawerNavigator} />
       <Stack.Screen name="Notifications" component={NotificationListScreen} />
       <Stack.Screen name="Messanger" component={MessengerScreen} />

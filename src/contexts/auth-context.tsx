@@ -69,23 +69,7 @@ const useAuthHookContext = () => {
     token: null,
   } as AuthStateType);
 
-  function SignIn({username, password}: {username: string; password: string}) {
-    (async () => {
-      try {
-        let {data} = await axiosInstance.get(
-          `/login_creds?username=${username}`,
-        );
-        if (data[0].token) {
-          AsyncStorage.setItem('token', data[0].token);
-          navigationRef.navigate('AppDrawer', {
-            screen: 'MapScreen',
-          });
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }
+  function SignIn({username, password}: {username: string; password: string}) {}
   function SignOut() {
     (async () => {
       try {

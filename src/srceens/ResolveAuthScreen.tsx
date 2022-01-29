@@ -1,6 +1,6 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {Button, StyleSheet, Text} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import Center from '../components/Center';
 import useAuthHookContext from '../contexts/auth-context';
 import AuthStackParamList from '../types/authstack-param-list';
@@ -13,7 +13,11 @@ export default function ResolveAuthScreen(props: Props) {
   React.useEffect(() => {
     tryLocalSignIn();
   }, []);
-  return null;
+  return (
+    <View>
+      <Text>ResolveAuthScreen</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({});
